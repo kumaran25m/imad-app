@@ -24,11 +24,11 @@ var htmlTemplate = `
     <body>
        <div><a href="/">Home</a></div>
         <hr>
-        <p>$heading</p>
+        <p>${heading}</p>
         <hr>
-        <p>$date</p>
+        <p>${date}</p>
         <hr>
-        <p>$content<p>
+        <p>${content}<p>
         <h3> This is my first article.....</h3>
     </body>
 </html>
