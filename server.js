@@ -20,7 +20,7 @@ var date = data.date;
 var content = data.content;
 var htmlTemplate = `
 <html>
-    <head><title>$title</title> </head>
+    <head><title>${title}</title> </head>
     <body>
        <div><a href="/">Home</a></div>
         <hr>
