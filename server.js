@@ -13,6 +13,11 @@ var articleOne = {
     hello world.... Hi Hey hellooooo`
 };
 
+function createTemplate (data){
+var title = data.title;
+var heading = data.heading;
+var date = data.date;
+var content = data.content;
 var htmlTemplate = `
 <html>
     <head><title>$title</title> </head>
@@ -27,15 +32,14 @@ var htmlTemplate = `
         <h3> This is my first article.....</h3>
     </body>
 </html>
-
-`
-
+`;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname,'ui','article-one.html'));
+app.get('/articleOne', function (req, res) {
+  res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two', function (req, res) {
