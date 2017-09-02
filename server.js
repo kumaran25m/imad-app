@@ -53,10 +53,9 @@ app.get('/articles/:articleone', function(req,res){
        if(err){
            res.status(500).send(err.toString());
            console.log('wrong creds');
-       } else if(result.rows.length === 0){
-           res.status(404).send('Article not found');
-           
-       }
+       } //else if(result.rows.length === 0){
+           //res.status(404).send('Article not found');
+       //}
        else{
            res.send(JSON.stringify(result.rows));
        }
