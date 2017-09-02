@@ -8,9 +8,9 @@ var config = {
     database: 'smartkumara',
     host : 'http://db.imad.hasura-app.io',
     port : '5432',
-    password : 'db-smartkumara-67757'
+    password : process.env.DB_PASSWORD
 };
-//process.env.DB_PASSWORD
+//process.env.DB_PASSWORD,'db-smartkumara-67757'
 var app = express();
 app.use(morgan('combined'));
 
