@@ -47,8 +47,9 @@ var htmlTemplate = `
 return htmlTemplate;
 }
 
-app.get('/testdb', function(req,res){
-    pool.query('SELECT * FROM "article"', function(err,result){
+app.get('/articles/:articleone', function(req,res){
+    var articleName = req.params.articleone;
+    pool.query('SELECT * FROM "article" where id = '+req.params.articleone , function(err,result){
        if(err){
            res.status(500).send(err.toString());
            console.log('wrong creds');
