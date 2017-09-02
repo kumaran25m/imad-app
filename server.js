@@ -49,11 +49,15 @@ return htmlTemplate;
 
 app.get('/articles/:articleone', function(req,res){
     var articleName = req.params.articleone;
-    pool.query("SELECT * FROM article where id = "+req.params.articleone+"" , function(err,result){
+    pool.query("SELECT * FROM article WHERE id = "+req.params.articleone+"" , function(err,result){
        if(err){
            res.status(500).send(err.toString());
            console.log('wrong creds');
-       } else{
+       } else if(result.rows.length === 0){
+           res.status(404).send('Article not found');
+           
+       }
+       else{
            res.send(JSON.stringify(result.rows));
        }
     });
