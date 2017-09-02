@@ -51,6 +51,7 @@ app.get('/testdb', function(req,res){
     pool.query('SELECT * FROM "article"', function(err,result){
        if(err){
            res.status(500).send(err.toString());
+           console.log('wrong creds');
        } else{
            res.send(JSON.stringify(result));
        }
