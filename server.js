@@ -49,7 +49,7 @@ return htmlTemplate;
 
 app.get('/articles/:articleone', function(req,res){
     var articleName = req.params.articleone;
-    pool.query("SELECT * FROM article WHERE title = "+req.params.articleone , function(err,result){
+    pool.query("SELECT * FROM article WHERE title = '"+req.params.articleone+"'" , function(err,result){
        if(err){
            res.status(500).send(err.toString());
            console.log('wrong creds');
