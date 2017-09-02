@@ -55,7 +55,7 @@ app.get('/testdb', function(req,res){
            res.send(JSON.stringify(result));
        }
     });
-    res.send();
+    
 });
 
 app.get('/', function (req, res) {
