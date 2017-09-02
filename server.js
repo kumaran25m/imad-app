@@ -53,7 +53,7 @@ app.get('/testdb', function(req,res){
            res.status(500).send(err.toString());
            console.log('wrong creds');
        } else{
-           res.send(JSON.stringify(result));
+           res.send(JSON.stringify(result.rows));
        }
     });
     
