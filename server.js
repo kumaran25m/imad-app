@@ -48,7 +48,7 @@ return htmlTemplate;
 }
 
 app.get('/testdb', function(req,res){
-    pool.query('SELECT * FROM "user"', function(err,result){
+    pool.query('SELECT * FROM "article"', function(err,result){
        if(err){
            res.status(500).send(err.toString());
        } else{
